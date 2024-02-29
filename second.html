@@ -69,22 +69,18 @@
         .product h3 {
             margin-top: 0;
         }
-        .message-form {
-            display: none;
-            margin-top: 10px;
-        }
-        .message-form textarea {
-            width: 100%;
-            height: 100px;
-            resize: none;
-        }
-        .message-form button {
+        .buy-button {
             background-color: #333;
             color: #fff;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
+            display: block;
+            margin-top: 10px;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -104,11 +100,7 @@
                 <img src="metallic.jpg" alt="Metallic Car Color">
                 <h3>Metallic Finish</h3>
                 <p>Price: $50</p>
-                <button onclick="showMessageForm('Metallic Finish')">Buy</button>
-                <div class="message-form" id="messageForm1">
-                    <textarea placeholder="Type your message here"></textarea>
-                    <button onclick="sendMessage('Metallic Finish')">Send</button>
-                </div>
+                <a href="https://api.whatsapp.com/send?phone=+918735965695text=Hi" class="buy-button">Buy</a>
             </div>
             
             <!-- Add more products here -->
@@ -118,22 +110,5 @@
     <footer>
         <p>&copy; 2024 Auto Colour Solution. All rights reserved.</p>
     </footer>
-
-    <script>
-        function showMessageForm(productName) {
-            var messageForm = document.getElementById('messageForm1'); // Update with appropriate ID
-            messageForm.style.display = 'block';
-            messageForm.querySelector('textarea').focus();
-        }
-
-        function sendMessage(productName) {
-            var messageForm = document.getElementById('messageForm1'); // Update with appropriate ID
-            var message = messageForm.querySelector('textarea').value;
-            // Send message code here (e.g., AJAX request)
-            alert('Message sent for ' + productName + ': ' + message);
-            messageForm.style.display = 'none';
-            messageForm.querySelector('textarea').value = '';
-        }
-    </script>
 </body>
 </html>
